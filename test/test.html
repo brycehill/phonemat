@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Phonemat Test Suite</title>
+  <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+  <script src="../libs/jquery-loader.js"></script>
+  <!-- Load local QUnit. -->
+  <!-- Load local lib and tests. -->
+  <script src="../src/phonemat.js"></script>
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>
+  window._$ = jQuery.noConflict(true);
+
+
+  </script>
+</head>
+<body>
+  
+  <div id="qunit-fixture">
+    <input id='phone_number' type='tel' value='' />
+    <div id='phone_number2'  value='' />
+    <div id='phone_number3'  value='' />
+    <div id='phone_number4'  value='' />
+  </div>
+  <script>
+  _$('#qunit-fixture').children().phonemat();
+  </script>
+</body>
+</html>

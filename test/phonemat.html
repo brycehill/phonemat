@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Phonemat Test Suite</title>
+  <!-- 
+    Load local jQuery. This can be overridden with a ?jquery=___ param.
+    Use this to test various versions of jQuery. 
+   -->
+  <script src="../libs/jquery-loader.js"></script>
+  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
+  <script src="../libs/qunit/qunit.js"></script>
+  <script src="../src/phonemat.js"></script>
+  <script src="phonemat.js"></script>
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>window._$ = jQuery.noConflict(true);</script>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <input id='phone-number' type='tel' value='' />
+    <div id='phone-number'></div>
+    <span id='phone-number'></span>
+  </div>
+</body>
+</html>
