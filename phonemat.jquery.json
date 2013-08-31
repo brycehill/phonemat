@@ -1,9 +1,9 @@
 {
-  "name": "Phonemat",
-  "title": "Phonemat",
+  "name": "phonemat",
+  "title": "phonemat",
   "description": "Dynamic phone number formatter",
   "version": "0.1.0",
-  "homepage": "",
+  "homepage": "https://github.com/brycehill/phonemat",
   "author": {
     "name": "Bryce Hill",
     "email": "bryce@brycehill.net"
