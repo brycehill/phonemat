@@ -146,24 +146,32 @@
     }
   });
 
-  test('even number length', function() {
+  test('eight digit phone number length', function() {
     var len = 8,
-        options = { numberLength: len };
+        options = { numberLength: len }, 
+        index;
 
     this.input.phonemat(options)
-        .val('020 12454562')
+        .val('(020) 1245')
         .trigger('keyup');
+
+    index = this.input.val().indexOf('-');
+    strictEqual(index, 10, 'The delimiter follws the first 4 numbers');    
   });
 
-  test('odd number length', function() {
+  test('seven digit number length', function() {
     var len = 7,
-        options = { numberLength: len };
+        options = { numberLength: len },
+        index;
 
     this.input.phonemat(options)
-        .val('020 124')
-        .trigger('keyup')
-        .val('0230')
-        .trigger('keyup')
+        .val('(020) 120')
+        .trigger('keyup');
+
+
+    index = this.input.val().indexOf('-');
+    strictEqual(index, 9, 'The delimiter follows the first 3 numbers');
+
   });
 
   test('even area code length', function() {
