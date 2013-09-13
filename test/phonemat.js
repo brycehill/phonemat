@@ -210,6 +210,25 @@
     strictEqual(index, len + 1, 'The closing paren is right of the area code');    
   });
 
+
+  /*
+   * Test that the delete keys do not add additional characters when pressed. 
+   */
+  module('Delete Keys', {
+    // This will run before each test in this module.
+    setup: function() {
+      this.input = $('#phone-number');
+    }
+  });
+
+  test('when delete key is pressed, no characters added', function() {
+    expect(0);
+  });
+
+  test('when backspace key is pressed, no characters added', function() {
+    expect(0);
+  });
+
   // module(':awesome selector', {
   //   // This will run before each test in this module.
   //   setup: function() {
