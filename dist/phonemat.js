@@ -1,4 +1,4 @@
-/*! phonemat - v0.1.0 - 2013-08-30
+/*! phonemat - v0.1.0 - 2013-09-12
 * https://github.com/brycehill/phonemat
 * Copyright (c) 2013 Bryce Hill; Licensed MIT */
 ;(function($) {
@@ -47,7 +47,7 @@
   function Phonemat(element, options) {
     this.settings = $.extend({}, defaults, options),
     this.firstPos = this.firstDelimiterPosition(this.settings);
-
+    
     this.element = $(element);
     this.init();
   }
@@ -55,7 +55,6 @@
 
   Phonemat.prototype.init = function() {
     this.element.on("keyup", this.format.bind(this));
-
   };
 
 
@@ -76,23 +75,14 @@
         deleting = ($.inArray(e.keyCode, this.settings.deleteKeys) !== -1) ? true : false;
 
     if (!deleting) {
-
       if (value.length === this.settings.areaCodeLength) {
-          
         if (this.settings.wrapAreaCode) {
-
           input.val("(" + value + ") ");
-        
         } else {
-         
           input.val(value + this.settings.delimiter);
-        
         }
-      
       } else if (value.length === this.firstPos) {
-          
         input.val(value + this.settings.delimiter);
-      
       }
     }
   };
